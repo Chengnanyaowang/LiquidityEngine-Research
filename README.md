@@ -1,0 +1,120 @@
+# LiquidityEngine Research
+
+**An open reference implementation for auditable AI research workflows in crypto derivatives.**
+
+LiquidityEngine Research is the public technical companion to LiquidityEngine, an AI-native operating layer for professional crypto-derivatives research. It demonstrates how a market observation can become a reviewable decision record without turning an LLM into an unbounded trading authority.
+
+> **This repository is a research sandbox, not a trading bot, investment product, or signal service.** It contains synthetic examples and public interfaces only. Production strategy logic, live infrastructure, credentials, customer data, and proprietary research methods remain private.
+
+## The problem
+
+Crypto trading teams can see charts, liquidation data, open interest, and news, but their decisions are often scattered across terminals, scripts, chat messages, and memory. That makes it difficult to answer four operational questions:
+
+1. What market evidence was available at the time of a decision?
+2. What did the AI interpret, and what was still missing?
+3. Which deterministic controls allowed, deferred, or blocked the action?
+4. Can the team replay the decision later without changing the historical record?
+
+LiquidityEngine is designed around those questions. The public code focuses on the durable research primitives behind that workflow.
+
+## One research loop
+
+```mermaid
+flowchart LR
+    A["Market state"] --> B["Evidence bundle"]
+    B --> C["AI interpretation\n(private production component)"]
+    C --> D["Deterministic permission gate"]
+    D --> E["Decision record"]
+    E --> F["Frozen replay & review"]
+```
+
+The model may summarize context, but the permission gate is explicit, inspectable, and replayable. In this public reference, the gate only returns research states such as `observe`, `wait`, or `review`; it never emits executable trade instructions.
+
+## What is included
+
+- A small, dependency-light Python package for market snapshots, evidence bundles, decision records, and deterministic replay.
+- Synthetic BTC-perpetual market-state fixtures with traceable provenance labels.
+- A deliberately conservative example permission gate that demonstrates missing-evidence and event-risk handling.
+- Tests that lock schema behavior and replay determinism.
+- Architecture, redaction, evaluation, and product-roadmap documentation.
+
+## What is intentionally not included
+
+- Proprietary market-structure definitions, thresholds, scoring, prompts, or strategy authority files.
+- Live exchange connectors, API keys, WebSocket sessions, and execution logic.
+- Real trading records, customer data, account information, or unreleased benchmarks.
+- Any automated instruction to buy, sell, open, close, or size a position.
+
+## Quick start
+
+Requires Python 3.10+.
+
+```bash
+git clone https://github.com/Chengnanyaowang/LiquidityEngine-Research.git
+cd LiquidityEngine-Research
+python -m venv .venv
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+pip install -e .[dev]
+python scripts\run_demo.py
+pytest -q
+```
+
+macOS / Linux:
+
+```bash
+source .venv/bin/activate
+pip install -e '.[dev]'
+python scripts/run_demo.py
+pytest -q
+```
+
+The demo loads a synthetic evidence bundle and produces the same review-state record on each replay.
+
+## Public repository map
+
+```text
+src/liquidityengine_research/   Public data contracts, policy gate, and replay engine
+examples/                       Synthetic fixtures only
+scripts/run_demo.py             Runnable end-to-end example
+tests/                          Determinism and safety-boundary tests
+docs/                           Architecture, contracts, evaluation, and redaction policy
+assets/                         Reserved for public product media
+```
+
+## Product principles
+
+| Principle | In practice |
+| --- | --- |
+| Evidence before narrative | Every decision record references a fixed evidence bundle and provenance label. |
+| AI is bounded | Language-model interpretation is separated from deterministic permission controls. |
+| No silent revision | Historical records are replayed against their original inputs rather than overwritten by a newer model. |
+| Research, not custody | LiquidityEngine does not custody assets or act as an execution, advisory, or asset-management service. |
+| Private methods stay private | The public repository exposes contracts and reproducibility patterns, not the team's proprietary strategy. |
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Decision record contract](docs/decision-record-contract.md)
+- [Evaluation methodology](docs/evaluation.md)
+- [Security and redaction policy](docs/security-and-redaction.md)
+- [Product roadmap](docs/roadmap.md)
+- [Chinese overview](README.zh-CN.md)
+
+## For investors, research teams, and design partners
+
+This repository is designed to make the product's engineering thesis inspectable without exposing commercial IP. The broader LiquidityEngine product is being developed privately with a focus on professional BTC-perpetual research workflows, observable decision states, and replayable research traces.
+
+For product discussions or diligence inquiries: **pacinocorleone143@gmail.com**
+
+## Disclaimer
+
+Nothing in this repository is investment advice, a recommendation, an offer, or a solicitation to transact in any asset. The synthetic examples must not be used to operate a trading system. See [SECURITY.md](SECURITY.md) and [docs/security-and-redaction.md](docs/security-and-redaction.md) for the repository boundary.
+
+## License
+
+The public reference implementation is licensed under [Apache-2.0](LICENSE). The LiquidityEngine name, production system, proprietary strategy research, and private operational materials are not licensed by this repository.
