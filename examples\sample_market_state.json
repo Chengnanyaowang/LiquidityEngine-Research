@@ -1,0 +1,37 @@
+{
+  "disclosure": "Synthetic fixture. It does not represent a live market, investment view, or trading instruction.",
+  "snapshot": {
+    "snapshot_id": "synthetic-btc-001",
+    "as_of_utc": "2026-07-01T12:00:00Z",
+    "source": "synthetic_fixture",
+    "is_synthetic": true,
+    "price": 60000.0,
+    "price_structure": "unresolved",
+    "open_interest_change_pct": 0.8,
+    "liquidation_context": "concentrated_activity",
+    "event_risk": "normal"
+  },
+  "evidence": [
+    {
+      "evidence_id": "structure-001",
+      "category": "market_structure",
+      "summary": "Synthetic structure state remains unresolved.",
+      "provenance": "synthetic_fixture",
+      "value": "unresolved"
+    },
+    {
+      "evidence_id": "leverage-001",
+      "category": "leverage_context",
+      "summary": "Synthetic leverage context is present for review.",
+      "provenance": "synthetic_fixture",
+      "value": 0.8
+    },
+    {
+      "evidence_id": "event-001",
+      "category": "event_context",
+      "summary": "No synthetic event-risk window is active.",
+      "provenance": "synthetic_fixture",
+      "value": "normal"
+    }
+  ]
+}
