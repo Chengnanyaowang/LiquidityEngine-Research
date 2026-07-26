@@ -1,6 +1,0 @@
-[
-  "tests/test_replay.py::test_gate_blocks_incomplete_evidence_bundle",
-  "tests/test_replay.py::test_gate_defers_event_risk_without_generating_trade_instruction",
-  "tests/test_replay.py::test_public_reference_rejects_non_synthetic_input",
-  "tests/test_replay.py::test_replay_is_deterministic_for_fixed_facts"
-]
