@@ -10,6 +10,8 @@ This repository tests the properties that can be demonstrated without revealing 
 2. Missing evidence produces an explicit block rather than an implied decision.
 3. An event-risk state produces a review or wait state.
 4. The public reference rejects non-synthetic input.
+5. A permissive interpreter cannot override the deterministic permission gate.
+6. An agent run records every public tool invocation and contains no execution fields.
 
 ## Private evaluation
 

@@ -2,7 +2,11 @@
 
 **An open reference implementation for auditable AI research workflows in crypto derivatives.**
 
-LiquidityEngine Research is the public technical companion to LiquidityEngine, an AI-native operating layer for professional crypto-derivatives research. It demonstrates how a market observation can become a reviewable decision record without turning an LLM into an unbounded trading authority.
+[![Public reference CI](https://github.com/Chengnanyaowang/LiquidityEngine-Research/actions/workflows/ci.yml/badge.svg)](https://github.com/Chengnanyaowang/LiquidityEngine-Research/actions/workflows/ci.yml)
+
+![LiquidityEngine bounded research loop](assets/research-loop.svg)
+
+LiquidityEngine Research is the public technical companion to LiquidityEngine, an AI-native operating layer for professional crypto-derivatives research. It demonstrates how a market observation can become a reviewable agent run without turning an LLM into an unbounded trading authority.
 
 > **This repository is a research sandbox, not a trading bot, investment product, or signal service.** It contains synthetic examples and public interfaces only. Production strategy logic, live infrastructure, credentials, customer data, and proprietary research methods remain private.
 
@@ -15,28 +19,28 @@ Crypto trading teams can see charts, liquidation data, open interest, and news, 
 3. Which deterministic controls allowed, deferred, or blocked the action?
 4. Can the team replay the decision later without changing the historical record?
 
-LiquidityEngine is designed around those questions. The public code focuses on the durable research primitives behind that workflow.
-
 ## One research loop
 
 ```mermaid
 flowchart LR
     A["Market state"] --> B["Evidence bundle"]
-    B --> C["AI interpretation\n(private production component)"]
-    C --> D["Deterministic permission gate"]
-    D --> E["Decision record"]
-    E --> F["Frozen replay & review"]
+    B --> C["Bounded evidence tools"]
+    C --> D["Structured interpretation"]
+    D --> E["Deterministic permission gate"]
+    E --> F["Decision record"]
+    F --> G["Frozen replay & review"]
 ```
 
-The model may summarize context, but the permission gate is explicit, inspectable, and replayable. In this public reference, the gate only returns research states such as `observe`, `wait`, or `review`; it never emits executable trade instructions.
+The public agent uses a deterministic offline interpreter so every example is safe and reproducible. A production model may summarize context behind the same interface, but the local permission gate remains explicit, inspectable, and authoritative. The gate only returns research states such as `observe`, `wait`, or `review`; it never emits executable trade instructions.
 
 ## What is included
 
-- A small, dependency-light Python package for market snapshots, evidence bundles, decision records, and deterministic replay.
-- Synthetic BTC-perpetual market-state fixtures with traceable provenance labels.
-- A deliberately conservative example permission gate that demonstrates missing-evidence and event-risk handling.
-- Tests that lock schema behavior and replay determinism.
-- Architecture, redaction, evaluation, and product-roadmap documentation.
+- A dependency-light Python package for market snapshots, evidence bundles, decision records, and deterministic replay.
+- A bounded `ResearchAgent` that records tool use, structured interpretation, local authorization, and a complete run trace.
+- Four synthetic scenarios covering resolved observation, unresolved structure, event risk, and missing evidence.
+- A deliberately conservative permission gate for missing-evidence and event-risk handling.
+- Twelve tests that lock agent boundaries, schema behavior, and replay determinism.
+- Architecture, redaction, evaluation, competition, and roadmap documentation.
 
 ## What is intentionally not included
 
@@ -61,6 +65,7 @@ Windows PowerShell:
 .\.venv\Scripts\Activate.ps1
 pip install -e .[dev]
 python scripts\run_demo.py
+python scripts\run_agent_demo.py --scenario all
 pytest -q
 ```
 
@@ -70,31 +75,31 @@ macOS / Linux:
 source .venv/bin/activate
 pip install -e '.[dev]'
 python scripts/run_demo.py
+python scripts/run_agent_demo.py --scenario all
 pytest -q
 ```
-
-The demo loads a synthetic evidence bundle and produces the same review-state record on each replay.
 
 ## Public repository map
 
 ```text
-src/liquidityengine_research/   Public data contracts, policy gate, and replay engine
-examples/                       Synthetic fixtures only
-scripts/run_demo.py             Runnable end-to-end example
-tests/                          Determinism and safety-boundary tests
-docs/                           Architecture, contracts, evaluation, and redaction policy
-assets/                         Reserved for public product media
+src/liquidityengine_research/   Agent, data contracts, policy gate, and replay engine
+examples/                       Synthetic fixtures and bounded scenarios only
+scripts/                        Runnable replay and agent demonstrations
+tests/                          Agent, determinism, and safety-boundary tests
+docs/                           Architecture, contracts, evaluation, and safety policy
+assets/                         Approved public architecture media
+.github/workflows/              Automated Python 3.10 and 3.12 checks
 ```
 
 ## Product principles
 
 | Principle | In practice |
 | --- | --- |
-| Evidence before narrative | Every decision record references a fixed evidence bundle and provenance label. |
-| AI is bounded | Language-model interpretation is separated from deterministic permission controls. |
-| No silent revision | Historical records are replayed against their original inputs rather than overwritten by a newer model. |
-| Research, not custody | LiquidityEngine does not custody assets or act as an execution, advisory, or asset-management service. |
-| Private methods stay private | The public repository exposes contracts and reproducibility patterns, not the team's proprietary strategy. |
+| Evidence before narrative | Every run references fixed evidence and provenance. |
+| AI is bounded | Interpretation is separated from deterministic authorization. |
+| No silent revision | Historical records are replayed against their original inputs. |
+| Research, not custody | No custody, execution, advisory, or asset-management service. |
+| Private methods stay private | Public contracts and safety patterns do not expose proprietary strategy. |
 
 ## Documentation
 
@@ -103,17 +108,20 @@ assets/                         Reserved for public product media
 - [Evaluation methodology](docs/evaluation.md)
 - [Security and redaction policy](docs/security-and-redaction.md)
 - [Product roadmap](docs/roadmap.md)
+- [GOAI competition overview](docs/goai-submission.md)
+- [Team](TEAM.md)
 - [Chinese overview](README.zh-CN.md)
 
 ## For investors, research teams, and design partners
 
-This repository is designed to make the product's engineering thesis inspectable without exposing commercial IP. The broader LiquidityEngine product is being developed privately with a focus on professional BTC-perpetual research workflows, observable decision states, and replayable research traces.
+This repository makes the product's engineering thesis inspectable without exposing commercial IP. The broader LiquidityEngine product is developed privately around professional BTC-perpetual research workflows, observable decision states, and replayable research traces.
 
-For product discussions or diligence inquiries: **pacinocorleone143@gmail.com**
+- Product walkthrough: [LiquidityEngine demo](https://youtu.be/Jy_4ANm5ClY)
+- Contact: **pacinocorleone143@gmail.com**
 
 ## Disclaimer
 
-Nothing in this repository is investment advice, a recommendation, an offer, or a solicitation to transact in any asset. The synthetic examples must not be used to operate a trading system. See [SECURITY.md](SECURITY.md) and [docs/security-and-redaction.md](docs/security-and-redaction.md) for the repository boundary.
+Nothing in this repository is investment advice, a recommendation, an offer, or a solicitation to transact in any asset. Synthetic examples must not be used to operate a trading system. See [SECURITY.md](SECURITY.md) and [docs/security-and-redaction.md](docs/security-and-redaction.md).
 
 ## License
 

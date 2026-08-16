@@ -25,3 +25,29 @@ A decision record is a compact, immutable research artifact. It does not contain
 ## What is excluded
 
 Private model prompts, proprietary strategy labels, confidence thresholds, pricing of data sources, customer identities, and execution instructions do not belong in the public contract.
+
+## Agent run envelope
+
+Version `0.2.0` adds an `agent-run.v1` envelope around the decision record. It records bounded tool invocations and a structured interpretation while keeping the deterministic decision as a separate authority.
+
+```json
+{
+  "schema_version": "agent-run.v1",
+  "run_id": "d80ea9ed083f4b89",
+  "snapshot_id": "synthetic-btc-event-001",
+  "tool_invocations": [
+    {"name": "inspect_event_boundary", "output": {"event_risk": "scheduled_release"}}
+  ],
+  "interpretation": {
+    "provider": "synthetic_offline_interpreter",
+    "requested_action": "wait",
+    "uncertainty": ["event_window_active"]
+  },
+  "decision": {
+    "action": "wait",
+    "permission_status": "deferred"
+  }
+}
+```
+
+An interpretation is descriptive. The nested decision record is the result of the independent local gate and cannot be overridden by the interpreter.

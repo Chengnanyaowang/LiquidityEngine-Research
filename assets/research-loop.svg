@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">LiquidityEngine bounded research loop</title>
+  <desc id="desc">A synthetic market state flows through evidence tools, structured interpretation, a deterministic permission gate, and replay.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071d35"/>
+      <stop offset="0.56" stop-color="#0b4164"/>
+      <stop offset="1" stop-color="#12779a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#00111f" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="720" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#a7e9ff" stroke-width="1">
+    <path d="M0 120H1600M0 240H1600M0 360H1600M0 480H1600M0 600H1600"/>
+    <path d="M160 0V720M320 0V720M480 0V720M640 0V720M800 0V720M960 0V720M1120 0V720M1280 0V720M1440 0V720"/>
+  </g>
+  <text x="90" y="92" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">LIQUIDITYENGINE RESEARCH</text>
+  <text x="90" y="140" fill="#9fe8ff" font-family="Segoe UI, Arial, sans-serif" font-size="24">Evidence-grounded AI research, with deterministic authority</text>
+  <g font-family="Segoe UI, Arial, sans-serif" filter="url(#shadow)">
+    <g transform="translate(90 245)">
+      <rect width="250" height="205" rx="8" fill="#f5fbff"/>
+      <rect width="250" height="12" rx="6" fill="#36c6f4"/>
+      <text x="28" y="70" fill="#0b243b" font-size="22" font-weight="700">MARKET STATE</text>
+      <text x="28" y="112" fill="#44657c" font-size="18">Synthetic snapshot</text>
+      <text x="28" y="144" fill="#44657c" font-size="18">Typed evidence</text>
+      <text x="28" y="176" fill="#44657c" font-size="18">Source provenance</text>
+    </g>
+    <g transform="translate(390 245)">
+      <rect width="250" height="205" rx="8" fill="#f5fbff"/>
+      <rect width="250" height="12" rx="6" fill="#68d391"/>
+      <text x="28" y="70" fill="#0b243b" font-size="22" font-weight="700">BOUNDED TOOLS</text>
+      <text x="28" y="112" fill="#44657c" font-size="18">Evidence check</text>
+      <text x="28" y="144" fill="#44657c" font-size="18">Event boundary</text>
+      <text x="28" y="176" fill="#44657c" font-size="18">Structure state</text>
+    </g>
+    <g transform="translate(690 245)">
+      <rect width="250" height="205" rx="8" fill="#f5fbff"/>
+      <rect width="250" height="12" rx="6" fill="#f6c85f"/>
+      <text x="28" y="70" fill="#0b243b" font-size="22" font-weight="700">INTERPRETATION</text>
+      <text x="28" y="112" fill="#44657c" font-size="18">Structured output</text>
+      <text x="28" y="144" fill="#44657c" font-size="18">Uncertainty list</text>
+      <text x="28" y="176" fill="#44657c" font-size="18">No execution power</text>
+    </g>
+    <g transform="translate(990 245)">
+      <rect width="250" height="205" rx="8" fill="#f5fbff"/>
+      <rect width="250" height="12" rx="6" fill="#ff7a8a"/>
+      <text x="28" y="70" fill="#0b243b" font-size="22" font-weight="700">LOCAL GATE</text>
+      <text x="28" y="112" fill="#44657c" font-size="18">Observe</text>
+      <text x="28" y="144" fill="#44657c" font-size="18">Wait</text>
+      <text x="28" y="176" fill="#44657c" font-size="18">Review</text>
+    </g>
+    <g transform="translate(1290 245)">
+      <rect width="220" height="205" rx="8" fill="#f5fbff"/>
+      <rect width="220" height="12" rx="6" fill="#ab8df7"/>
+      <text x="28" y="70" fill="#0b243b" font-size="22" font-weight="700">REPLAY</text>
+      <text x="28" y="112" fill="#44657c" font-size="18">Decision record</text>
+      <text x="28" y="144" fill="#44657c" font-size="18">Stable digest</text>
+      <text x="28" y="176" fill="#44657c" font-size="18">Reviewable trace</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#b9efff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M348 348H378"/><path d="M370 338L380 348 370 358"/>
+    <path d="M648 348H678"/><path d="M670 338L680 348 670 358"/>
+    <path d="M948 348H978"/><path d="M970 338L980 348 970 358"/>
+    <path d="M1248 348H1278"/><path d="M1270 338L1280 348 1270 358"/>
+  </g>
+  <rect x="90" y="520" width="1420" height="102" rx="8" fill="#06192a" opacity="0.78"/>
+  <text x="125" y="568" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">PUBLIC SAFETY BOUNDARY</text>
+  <text x="125" y="603" fill="#a9d8e9" font-family="Segoe UI, Arial, sans-serif" font-size="20">Synthetic data only  |  No custody  |  No trade execution  |  Private methods remain private</text>
+</svg>

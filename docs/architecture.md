@@ -17,8 +17,10 @@ flowchart TB
 
     subgraph public["This public reference repository"]
       H["Synthetic market state"] --> I["Public evidence contract"]
-      I --> J["Generic permission gate"]
-      J --> K["Deterministic replay"]
+      I --> J["Bounded evidence tools"]
+      J --> K["Offline structured interpreter"]
+      K --> L["Generic permission gate"]
+      L --> M["Agent run and deterministic replay"]
     end
 ```
 
@@ -28,6 +30,8 @@ flowchart TB
 | --- | --- | --- |
 | `MarketSnapshot` | Normalizes a time-stamped market observation. | Included with synthetic data only. |
 | `EvidenceItem` | Gives each input fact a category and provenance. | Included. |
+| `ResearchAgent` | Orchestrates tools, interpretation, authorization, and trace creation. | Included with an offline synthetic interpreter. |
+| `ToolInvocation` | Records each deterministic inspection and its output. | Included. |
 | `PermissionGate` | Applies transparent research safety checks. | Included as a generic example. |
 | `DecisionRecord` | Stores action, reasons, evidence IDs, and a fact digest. | Included. |
 | Production strategy authority | Determines how a private research method interprets market structure. | Private. |
