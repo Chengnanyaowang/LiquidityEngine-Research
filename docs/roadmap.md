@@ -7,13 +7,15 @@ The public reference repository tracks the reusable research-infrastructure laye
 - Synthetic market-state and evidence contracts.
 - Deterministic research permission gate.
 - Decision-record digest and replay demonstration.
+- Bounded synthetic research-agent orchestration and tool traces.
+- Multi-scenario public safety tests and automated CI.
 - Explicit IP, security, and data-redaction boundaries.
 
 ## Next public milestones
 
 1. Versioned decision-record schemas and migration examples.
 2. A browser-based synthetic replay viewer.
-3. Additional public fixtures covering incomplete data and event-risk workflows.
+3. A provider-neutral structured-interpretation adapter with offline fixtures.
 4. A public evaluation harness for contract and replay reliability.
 
 ## Product direction
